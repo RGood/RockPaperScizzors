@@ -4,8 +4,6 @@
  */
 package rockpaperscizzors;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Randy
@@ -27,7 +25,7 @@ public class RockPaperScizzors {
         
     public static void main(String[] args) {
         
-        RPSPlayer p1 = new AlwaysPaper();
+        RPSPlayer p1 = new RandomMove();
         RPSPlayer p2 = new AlwaysRock();
         
         int[] wins = new int[50];
