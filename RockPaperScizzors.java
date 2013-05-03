@@ -22,11 +22,34 @@ public class RockPaperScizzors {
         }
         return 0;
     }
+    
+    private static String genWinReport(int[] wins){
+        String toReturn = "";
+        int p1 = 0;
+        int p2 = 0;
+        int draw = 0;
+        
+        for(int i = 0;i<wins.length;i++){
+            if(wins[i]==1){
+                p1++;   
+            }else if(wins[i]==2){
+                p2++;
+            }else{
+                draw++;
+            }
+        }
+        
+        toReturn += "Player1 Wins: "+p1+"\n";
+        toReturn += "Player2 Wins: "+p2+"\n";
+        toReturn += "Draws: "+draw;
+        
+        return toReturn;
+    }
         
     public static void main(String[] args) {
         
         RPSPlayer p1 = new RandomMove();
-        RPSPlayer p2 = new AlwaysRock();
+        RPSPlayer p2 = new RandomMove();
         
         int[] wins = new int[50];
         
@@ -34,7 +57,8 @@ public class RockPaperScizzors {
             wins[i] = getWinner(p1.move(),p2.move());
             p1.result(wins[i]==1);
             p2.result(wins[i]==2);
-            System.out.println(wins[i]);
         }
+        
+        System.out.println(genWinReport(wins));
     }
 }
