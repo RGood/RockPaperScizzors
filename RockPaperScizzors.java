@@ -48,8 +48,8 @@ public class RockPaperScizzors {
         
     public static void main(String[] args) {
         
-        RPSPlayer p1 = new RandomMove();
-        RPSPlayer p2 = new RandomMove();
+        RPSPlayer p1 = new RatioPlayer();
+        RPSPlayer p2 = new RotatingPlayer();
         
         int[] wins = new int[50];
         
